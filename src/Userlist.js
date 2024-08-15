@@ -102,7 +102,7 @@ useEffect(() => {
                         <td>{user.startDate}</td>
                         <td>{user.salary}</td>
                         <th>
-                       <Link to={`/User-edit/${user.id}`}>   <button className="btn btn-primary btn-sm" >Edit</button></Link>
+                       <Link to={`/User-edit/${user.id}`}>   <button className="btn btn-primary btn-sm mt-2" >Edit</button></Link>
                           
                          <button onClick={()=>onDelete(user.id)} className="btn btn-danger btn-sm ml-1 mt-2">Delete</button>
     
