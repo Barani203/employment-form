@@ -19,7 +19,7 @@ function App() {
             <div class="container-fluid">
               {/* <Dashboard/> <Userlist /> */}
               <Routes>
-                <Route path="/" element={<Dashboard />}></Route>
+                <Route path="/" element={<Userlist />}></Route>
                 <Route path="/user" element={<Userlist />}></Route>
               <Route path="/usercreate" element={<Usercreate/>}></Route>
               <Route path="/user-edit/:id" element={<Useredit/>}></Route>
