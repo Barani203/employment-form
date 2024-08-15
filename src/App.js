@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./Sidebar";
+import Tapbar from "./Tapbar";
+import Dashboard from "./Dashboard";
+import Userlist from "./Userlist";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Usercreate from "./Usercreate";
+import Useredit from "./Useredit";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div id="wrapper">
+        <Sidebar> </Sidebar>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+            <Tapbar />
+            <div class="container-fluid">
+              {/* <Dashboard/> <Userlist /> */}
+              <Routes>
+                <Route path="/" element={<Dashboard />}></Route>
+                <Route path="/user" element={<Userlist />}></Route>
+              <Route path="/usercreate" element={<Usercreate/>}></Route>
+              <Route path="/user-edit/:id" element={<Useredit/>}></Route>
+             
+              </Routes>
+            </div>
+          </div>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
